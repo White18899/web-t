@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="iframe-body">
+    <div class="form-card">
+        <h2>Register</h2>
+        <form onsubmit="event.preventDefault(); alert('Registered');">
+            <div class="form-group"><label>Full Name</label><input type="text" class="form-control" required></div>
+            <div class="form-group"><label>Email</label><input type="email" class="form-control" required></div>
+            <div class="form-group"><label>Username</label><input type="text" class="form-control" required></div>
+            <div class="form-group"><label>Password</label><input type="password" class="form-control" required></div>
+            <div class="form-group"><label>Confirm</label><input type="password" class="form-control" required></div>
+            <button type="submit" class="btn">Register</button>
+            <p style="font-size: 0.8rem; text-align: center; margin: 10px 0 0 0;">
+                Already have an account? <a href="login.html" onclick="parent.document.querySelector('a[href=\'login.html\']').click();">Login</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>

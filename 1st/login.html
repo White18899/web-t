@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="iframe-body">
+    <div class="form-card">
+        <h2>Login</h2>
+        <form onsubmit="event.preventDefault(); alert('Logged In');">
+            <div class="form-group"><label>Username</label><input type="text" class="form-control" required></div>
+            <div class="form-group"><label>Password</label><input type="password" class="form-control" required></div>
+            <button type="submit" class="btn">Login</button>
+            <p style="font-size: 0.8rem; text-align: center; margin: 10px 0 0 0;">
+                Don't have an account? <a href="regc.html" onclick="parent.document.querySelector('a[href=\'regc.html\']').click();">Register</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>
