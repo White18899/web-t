@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
 </head>
+
 <body class="iframe-body">
-    <div class="form-card">
+    <div class="form-card wide">
         <h2>Register</h2>
         <form onsubmit="event.preventDefault(); alert('Registered');">
             <div class="form-group"><label>Full Name</label><input type="text" class="form-control" required></div>
             <div class="form-group"><label>Email</label><input type="email" class="form-control" required></div>
-            <div class="form-group"><label>Username</label><input type="text" class="form-control" required></div>
             <div class="form-group"><label>Password</label><input type="password" class="form-control" required></div>
-            <div class="form-group"><label>Confirm</label><input type="password" class="form-control" required></div>
+            <div class="form-group"><label>Age</label><input type="number" class="form-control" required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" class="form-control"></div>
+            <div class="form-group"><label>Date of Birth</label><input type="date" class="form-control" required></div>
+            <div class="form-group"><label>Interview Slot</label><input type="datetime-local" class="form-control">
+            </div>
+            <div class="form-group"><label>Join Month</label><input type="month" class="form-control"></div>
+            <div class="form-group"><label>Accent Color</label><input type="color" class="form-control"
+                    style="height: 35px; padding: 2px;"></div>
+            <div class="form-group"><label>Upload ID</label><input type="file" class="form-control" required></div>
+            <div class="form-group"><label>Experience Level</label><input type="range" min="0" max="10"
+                    class="form-control" style="padding: 0; border: none;"></div>
+            <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px;">
+                <label style="margin: 0;">Gender:</label>
+                <input type="radio" name="gender" value="male" checked> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other
+            </div>
+            <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px;">
+                <input type="checkbox" required> <label style="margin: 0; font-weight: normal;">Agree to Terms</label>
+            </div>
             <button type="submit" class="btn">Register</button>
             <p style="font-size: 0.8rem; text-align: center; margin: 10px 0 0 0;">
-                Already have an account? <a href="login.html" onclick="parent.document.querySelector('a[href=\'login.html\']').click();">Login</a>
+                Already have an account? <a href="login.html"
+                    onclick="parent.document.querySelector('a[href=\'login.html\']').click();">Login</a>
             </p>
         </form>
     </div>
 </body>
+
 </html>
