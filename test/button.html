@@ -5,21 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .info {
+            height: 200px;
+            width: 600px;
+            background-color: rgb(255, 255, 255);
+            border: solid rgb(75, 75, 75) 3px;
+            font-size: 3rem;
+            margin: 60px;
+            padding: 20px;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
-    <button id="button">Click</button>
+    <div class="info" id="info">
+        <p>
+            hello there!
+        </p>
+        <button id="button">close</button>
+    </div>
+    <h1 id="heading" style="display: none;">heading</h1>
 </body>
 <script>
+    window.onload = function () {
+        document.getElementById("info").style.display = "block";
+    }
     document.getElementById("button").addEventListener("click", function () {
-        alert("Button clicked");
+        document.getElementById("info").style.display = "none";
+        document.getElementById("heading").style.display = "block";
     });
     // window.addEventListener("load", function () {
     //     alert("Window loaded");
     // });
-    window.onload = function () {
-        alert("Window loaded");
-    }
+    //window.onload = function () {
+    //    alert("Window loaded");
+    //}
 
 </script>
 
