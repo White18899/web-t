@@ -1,39 +1,169 @@
 <html>
+
 <head>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<img src="https://imgs.search.brave.com/oMzlnsYJhVpzoYGWnxL2zU1ze4AeiD6QUDZB-sjMvhc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/bWFnaWNkZWNvci5p/bi9jb20vMjAyNC8w/Mi8xNTE1MDgwOS9L/YWRhbGktU29vdGhp/bmctQmFuYW5hLUxl/YXZlcy1XYWxscGFw/ZXItTXVyYWwtNzEw/eDQ4OC5qcGc" alt="img" style="height: 50px; width: 50px;">
-<div class="main">
-<div class="item"></div>
-<div class="item"></div>
-<div class="item"></div>
-<div class="item"></div>
-<div class="item"></div>
-</div>
-<form>
-<div class="form-div"><label>Full Name:</label><input type="text" class="input" placeholder="name"></div>
-<div class="form-div"><label>Email:</label><input type="email" class="input"></div>
-<div class="form-div"><label>password:</label><input type="password" class="input"></div>
-<div class="form-div"><label>Phone no:</label><input type="tel" class="input"></div>
-<div class="form-div"><label>Age:</label><input type="number" class="input"></div>
-<div class="form-div"><label>date of brith:</label><input type="date" class="input"></div>
-<div class="form-div"><label>interview slot:</label><input type="datetime-local" class="input"></div>
-<div class="form-div"><label>Color:</label><input type="color"></div>
-<div class="form-div"><label>Upload ID:</label><input type="file" class="input"></div>
-<div class="form-div"><label>exp level:</label><input type="range" min=0 max=10 style="accent-color: black;"></div>
-<div class="form-div"><label>gender:</lable><input type="radio" name="gender" value="male" checked> Male
-<input type="radio" name="gender" valur="female"> Female </div>
-<div><label>study</label><select class="input">
-<option>ssc</option>
-<option>inter</option>
-<option>Btech</option>
-</select>
-</div>
-<div><input type="checkbox">Agree to terms </div>
-<div class="form-div"><label>About ur-self</label><textarea class="input" style="min-height: 80px;"></textarea></div>
-<button type="submit">sign in<button>
-</form>
+    <div class="container">
+        <form action="" method="post" onsubmit="return validate(event);">
+            <h2>Registration Form</h2>
+            <div class="form-div"><label for="full-name">Full Name</label><input type="text" id="full-name"
+                    class="input" placeholder="Enter full name"></div>
+            <div class="form-div"><label for="email">Email</label><input type="email" id="email" class="input"
+                    placeholder="name@example.com"></div>
+            <div class="form-div"><label for="password">Password</label><input type="password" id="password"
+                    class="input" placeholder="Min 8 chars (1 upper, 1 lower, 1 num, 1 special)">
+            </div>
+            <div class="form-div"><label for="phone">Phone No</label><input type="tel" id="phone" class="input"
+                    placeholder="10-digit number"></div>
+            <div class="form-div"><label for="age">Age</label><input type="number" id="age" class="input"
+                    placeholder="18 - 60"></div>
+            <div class="form-div"><label for="dob">Date of Birth</label><input type="date" id="dob" class="input"></div>
+            <div class="form-div"><label for="interview-slot">Interview Slot</label><input type="datetime-local"
+                    id="interview-slot" class="input"></div>
+            <div class="form-div"><label for="color">Favorite Color</label><input type="color" id="color"
+                    class="color-input"></div>
+            <div class="form-div"><label for="upload-id">Upload ID</label><input type="file" id="upload-id"
+                    class="input file-input">
+            </div>
+            <div class="form-div"><label for="exp-level">Experience Level (0-10)</label><input type="range"
+                    id="exp-level" min="0" max="10" value="5" class="range-input">
+            </div>
+            <div class="form-div"><label>Gender</label>
+                <div class="radio-group">
+                    <label class="radio-label" for="gender-male"><input type="radio" id="gender-male" name="gender"
+                            value="male" checked> Male</label>
+                    <label class="radio-label" for="gender-female"><input type="radio" id="gender-female" name="gender"
+                            value="female"> Female</label>
+                </div>
+            </div>
+            <div class="form-div"><label for="study">Study</label><select id="study" class="input">
+                    <option value="">Select Qualification</option>
+                    <option value="ssc">SSC</option>
+                    <option value="inter">Inter</option>
+                    <option value="Btech">B.Tech</option>
+                </select>
+            </div>
+            <div class="checkbox-div"><input type="checkbox" id="terms"><label for="terms">Agree to terms and
+                    conditions</label></div>
+            <div class="form-div"><label for="about">About Yourself</label><textarea id="about" class="input"
+                    placeholder="Tell us about yourself..." style="min-height: 90px;"></textarea>
+            </div>
+            <button type="submit" id="submit-btn">Sign In</button>
+        </form>
+    </div>
 
 </body>
+<script>
+    function validate(event) {
+        if (event) event.preventDefault();
+        let name = document.getElementById('full-name').value.trim();
+        let email = document.getElementById('email').value.trim();
+        let password = document.getElementById('password').value;
+        let phone = document.getElementById('phone').value.trim();
+        let age = document.getElementById('age').value;
+        let dob = document.getElementById('dob').value;
+        let interviewSlot = document.getElementById('interview-slot').value;
+        let color = document.getElementById('color').value;
+        let uploadId = document.getElementById('upload-id').value;
+        let expLevel = document.getElementById('exp-level').value;
+        let genderInput = document.querySelector('input[name="gender"]:checked');
+        let gender = genderInput ? genderInput.value : '';
+        let study = document.getElementById('study').value;
+        let terms = document.getElementById('terms').checked;
+        let about = document.getElementById('about').value.trim();
+
+        if (name === '') {
+            alert('Please enter full name');
+            return false;
+        }
+
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+            alert('Invalid email');
+            return false;
+        }
+
+        if (password.length < 8) {
+            alert('Password must be at least 8 characters long');
+            return false;
+        }
+        if (!/[a-z]/.test(password)) {
+            alert('Password must contain at least one lowercase letter');
+            return false;
+        }
+        if (!/[A-Z]/.test(password)) {
+            alert('Password must contain at least one uppercase letter');
+            return false;
+        }
+        if (!/[0-9]/.test(password)) {
+            alert('Password must contain at least one number');
+            return false;
+        }
+        if (!/[!@#$%^&*]/.test(password)) {
+            alert('Password must contain at least one special character');
+            return false;
+        }
+
+        if (phone.length !== 10 || !/^[0-9]+$/.test(phone)) {
+            alert('Invalid phone number');
+            return false;
+        }
+
+        if (age === '' || age < 18 || age > 60) {
+            alert('Age must be between 18 and 60');
+            return false;
+        }
+
+        if (dob === '') {
+            alert('Please select date of birth');
+            return false;
+        }
+
+        if (interviewSlot === '') {
+            alert('Please select interview slot');
+            return false;
+        }
+
+        if (uploadId === '') {
+            alert('Please upload ID');
+            return false;
+        }
+
+        if (expLevel === '' || expLevel < 0 || expLevel > 10) {
+            alert('Experience level must be between 0 and 10');
+            return false;
+        }
+
+        if (gender === '') {
+            alert('Please select gender');
+            return false;
+        }
+
+        if (study === '') {
+            alert('Please select study');
+            return false;
+        }
+
+        if (!terms) {
+            alert('Please agree to terms');
+            return false;
+        }
+
+        if (about === '') {
+            alert('Please enter about yourself');
+            return false;
+        }
+        if (color === '') {
+            alert('Please select color');
+            return false;
+        }
+        alert('Form submitted successfully!');
+        return false;
+    }
+</script>
+
 </html>
