@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="text">hello there</p>
+    <button onclick="Bold()">Bold</button>
+    <button onclick="Italic()">Italic</button>
+    <button onclick="Underline()">Underline</button>
+</body>
+<script>
+    let flag = 0;
+    function Bold() {
+        if (flag == 0) {
+            document.getElementById("text").style.fontWeight = "bold";
+            flag = 1;
+        }
+        else {
+            document.getElementById("text").style.fontWeight = "normal";
+            flag = 0;
+        }
+    }
+    function Italic() {
+        if (flag == 0) {
+            document.getElementById("text").style.fontStyle = "italic";
+            flag = 1;
+        }
+        else {
+            document.getElementById("text").style.fontStyle = "normal";
+            flag = 0;
+        }
+    }
+    function Underline() {
+        if (flag == 0) {
+            document.getElementById("text").style.textDecoration = "underline";
+            flag = 1;
+        }
+        else {
+            document.getElementById("text").style.textDecoration = "none";
+            flag = 0;
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            margin: 60px;
+            padding: 20px;
+            height: 200px;
+            width: 600px;
+            background-color: rgb(255, 255, 255);
+            border: solid rgb(75, 75, 75) 3px;
+            font-size: 4rem;
+        }
+
+        button {
+            font-size: 2rem;
+            margin: 60px;
+            padding: 10px;
+            height: 70px;
+            width: 100px;
+            background-color: rgb(255, 255, 255);
+            border: solid rgb(75, 75, 75) 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <p id="text">hello there</p>
+    </div>
+    <button onclick="Bold()">click</button>
+</body>
+<script>
+    let flag = 0;
+    function Bold() {
+        if (flag == 0) {
+            document.getElementById("container").style.display = "none";
+            flag = 1;
+        }
+        else {
+            document.getElementById("container").style.display = "block";
+            flag = 0;
+        }
+    }
+
+</script>
+
+</html>
